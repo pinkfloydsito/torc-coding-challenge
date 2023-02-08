@@ -33,10 +33,9 @@ ruby main.rb run
 
 # returns 'words'
 Enter the input you want to process such as this:
-   ```sh
+
 2 book at 12.49
 1 music CD at 14.99
 1 chocolate bar at 0.85
-   ```
 
 Press 2 enters and see how the code prints its result
