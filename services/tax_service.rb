@@ -1,4 +1,9 @@
+# frozen_string_literal: true
+
 module Services
+  # Service used to calculate the tax rate for a given product
+  # , depending on conditions such as the the type of product
+  # and if it is imported or not
   class TaxService
     attr_reader :product, :quantity, :price
 
@@ -10,35 +15,31 @@ module Services
 
     def tax_rate
       total = 0
-      unless book? || medicine? || food?
-        total += price * quantity * 0.10
-      end
+      total += price * quantity * 0.10 unless book? || medicine? || food?
 
       import_duty + total
     end
 
     def import_duty
-      if imported?
-        return price * quantity * 0.05
-      end
+      return price * quantity * 0.05 if imported?
 
       0
     end
 
     def book?
-      ['book', 'books'].any? { |keyword| product.downcase.include? keyword }
+      %w[book books].any? { |keyword| product.downcase.include? keyword }
     end
 
     def medicine?
-      ['medicine', 'pill'].any? { |keyword| product.downcase.include? keyword }
+      %w[medicine pill].any? { |keyword| product.downcase.include? keyword }
     end
 
     def food?
-      ['chocolate', 'food', 'soup', 'water'].any? { |keyword| product.downcase.include? keyword }
+      %w[chocolate food soup water].any? { |keyword| product.downcase.include? keyword }
     end
 
     def imported?
-      product.downcase.include? "imported" 
+      product.downcase.include? 'imported'
     end
   end
 end
