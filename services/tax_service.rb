@@ -17,7 +17,7 @@ module Services
       total = 0
       total += price * quantity * 0.10 unless book? || medicine? || food?
 
-      import_duty + total
+      ((import_duty + total) * 20).round.to_f / 20
     end
 
     def import_duty
