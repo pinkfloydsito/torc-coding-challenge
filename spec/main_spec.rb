@@ -27,7 +27,7 @@ describe Main do
 
     it 'should return the valid formatted total' do
       expect(subject.formatted_total).to eq "1 imported box of chocolates: 10.50\
-      \n1 imported bottle of perfume: 54.65\nSales Taxes: 7.65\nTotal: 65.15"
+\n1 imported bottle of perfume: 54.65\nSales Taxes: 7.65\nTotal: 65.15"
     end
   end
 
