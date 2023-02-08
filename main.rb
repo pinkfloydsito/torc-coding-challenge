@@ -26,7 +26,8 @@ class Main
     def formatted_total
         result = ""
         products.each do |product|
-            result.concat("#{product[:quantity]} #{product[:product]}: #{product[:price] * product[:quantity].to_f}\n")
+            tax_rate = Services::TaxService.new(product: product[:product], quantity: product[:quantity], price: product[:price]).tax_rate
+            result.concat("#{product[:quantity]} #{product[:product]}: #{'%.2f' % (product[:price] * product[:quantity].to_f + tax_rate)}\n")
         end
 
         result.concat("Sales Taxes: #{'%.2f' % total_tax}\n")
