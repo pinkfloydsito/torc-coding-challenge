@@ -30,7 +30,7 @@ class Main
   end
 
   def formatted_total
-    result = ''
+    result = +''
     products.each do |product|
       result.concat(formatted_product(product: product))
     end
@@ -42,10 +42,9 @@ class Main
   end
 
   def formatted_product(product:)
-    result = ''
     tax_rate = Services::TaxService.new(product: product[:product], quantity: product[:quantity],
                                         price: product[:price]).tax_rate
-    result.concat("#{product[:quantity]} ")
+    result = "#{product[:quantity]} "
     price_with_taxes = product[:price] * product[:quantity] + tax_rate
 
     result.concat(format("%<name>s: %<price>.2f\n", name: product[:product], price: price_with_taxes))
