@@ -59,10 +59,9 @@ class Main
 end
 
 def multi_gets all_text=""
-  while (text = gets) != "\n"
-    all_text << text
+  while all_text << STDIN.gets
+    return all_text if all_text["\n\n"]
   end
-  all_text
 end
 
 args = ARGV
@@ -70,7 +69,7 @@ if args.length == 0 || args.first != 'run'
     return
 end
 
-input = multi_gets("").chomp
+input = multi_gets.chomp
 
 main = Main.new(input: input)
-main.formatted_total
+print main.formatted_total
