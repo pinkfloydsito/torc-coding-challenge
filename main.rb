@@ -65,7 +65,12 @@ def multi_gets all_text=""
   all_text
 end
 
-# input = multi_gets.chomp
+args = ARGV
+if args.length == 0 || args.first != 'run'
+    return
+end
 
-# main = Main.new(input: input)
-# main.formatted_total
+input = multi_gets("").chomp
+
+main = Main.new(input: input)
+main.formatted_total
