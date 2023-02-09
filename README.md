@@ -31,7 +31,6 @@ This is an example of how to list things you need to use the software and how to
 ```Run
 ruby main.rb run
 
-# returns 'words'
 Enter the input you want to process such as this:
 
 2 book at 12.49
@@ -39,3 +38,5 @@ Enter the input you want to process such as this:
 1 chocolate bar at 0.85
 
 Press 2 enters and see how the code prints its result
+<img width="341" alt="image" src="https://user-images.githubusercontent.com/8844096/217894796-67d46e5a-6fe6-4fc0-9584-ac5ee0638a7a.png">
+
