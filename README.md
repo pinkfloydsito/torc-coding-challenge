@@ -1,4 +1,5 @@
 [![Ruby Style Guide](https://img.shields.io/badge/code_style-rubocop-brightgreen.svg)](https://github.com/rubocop/rubocop)
+[![Ruby](https://github.com/pinkfloydsito/torc-coding-challenge/actions/workflows/ruby.yml/badge.svg)](https://github.com/pinkfloydsito/torc-coding-challenge/actions/workflows/ruby.yml)
 
 <!-- GETTING STARTED -->
 ## Getting Started
