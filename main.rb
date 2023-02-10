@@ -68,7 +68,7 @@ class Main
 end
 
 # rubocop:disable Style/NestedModifier
-def multi_gets(all_text = '')
+def multi_gets(all_text = +'')
   return all_text if all_text["\n\n"] while all_text << $stdin.gets
 end
 # rubocop:enable Style/NestedModifier
